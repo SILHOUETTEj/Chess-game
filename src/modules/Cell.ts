@@ -1,6 +1,7 @@
 import { Board } from './Board';
 import { Figure } from './figures/Figure';
 import { Colors } from './Colors';
+import { throws } from 'assert';
 export class Cell{
     readonly x: number;
     readonly y: number;
@@ -19,5 +20,13 @@ export class Cell{
         this.board = board;
         this.available = false;
         this.id = Math.random()
+    }
+
+    moveFigure(target: Cell) {
+        if(this.figure && this.figure?.canMove(target)) {
+            this.figure.moveFigure(target)
+            target.figure = this.figure;
+            this.figure = null;
+        }
     }
 }
