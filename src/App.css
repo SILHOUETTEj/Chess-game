@@ -48,3 +48,10 @@ body{
   border-radius: 50%;
   background-color: lime;
 }
+
+.lost{
+  height: calc(50vh - 60px);
+  padding: 30px;
+  margin-left: 50px;
+  background-color: lightgrey;
+}
