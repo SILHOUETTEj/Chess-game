@@ -24,6 +24,12 @@ export class Cell{
     isEmpty() {
         return this.figure === null;
     }
+
+    isEnemy(target: Cell) {
+        if(target.figure) {
+            return this.figure?.color !== target.figure.color;
+        }
+    }
     isEmptyVertical(target: Cell): boolean {
         if(this.x !== target.x) {
             return false;
